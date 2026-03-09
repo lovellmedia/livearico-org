@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://livearico.org/sitemap-index.xml

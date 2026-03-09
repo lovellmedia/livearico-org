@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Live AriCo - Maryland Home Services for Seasonal Weather Challenges"
+  description="Expert guidance for Maryland homeowners on seasonal weather preparedness, home maintenance, and climate-resilient solutions for the Mid-Atlantic region."
+>
+  <div class="hero">
+    <div class="container">
+      <h1>Maryland Home Services for Seasonal Weather Challenges</h1>
+      <p class="hero-subtitle">Expert guidance for protecting your home through Maryland's four-season climate</p>
+    </div>
+  </div>
+
+  <div class="container main-content">
+    <section class="intro">
+      <p class="lead">Maryland's unique position in the Mid-Atlantic region creates distinct challenges for homeowners. From humid subtropical summers to cold winters and coastal weather patterns, your home faces varying stresses throughout the year. Live AriCo provides comprehensive resources to help you prepare, maintain, and protect your Maryland home against seasonal weather challenges.</p>
+    </section>
+
+    <section class="pillar-grid">
+      <h2>Explore Our Resources</h2>
+      <div class="grid">
+        <a href="/maryland-seasonal-home-services/" class="pillar-card">
+          <h3>Overview</h3>
+          <p>Introduction to Maryland's climate challenges and four-season maintenance approach</p>
+        </a>
+        <a href="/maryland-seasonal-home-services/history/" class="pillar-card">
+          <h3>History & Evolution</h3>
+          <p>How Maryland home construction and weatherproofing have evolved over time</p>
+        </a>
+        <a href="/maryland-seasonal-home-services/technical-deep-dive/" class="pillar-card">
+          <h3>Technical Deep-Dive</h3>
+          <p>HVAC systems, insulation, moisture barriers, and structural considerations</p>
+        </a>
+        <a href="/maryland-seasonal-home-services/ontology/" class="pillar-card">
+          <h3>Ontology & Knowledge Base</h3>
+          <p>Glossary of terms, climate zones, building codes, and material specifications</p>
+        </a>
+        <a href="/maryland-seasonal-home-services/trends/" class="pillar-card">
+          <h3>Current Trends & Future</h3>
+          <p>Smart home monitoring, climate adaptation, and emerging technologies</p>
+        </a>
+        <a href="/maryland-seasonal-home-services/tools/" class="pillar-card">
+          <h3>Tools & Resources</h3>
+          <p>Interactive calculators, checklists, and guides for homeowners</p>
+        </a>
+        <a href="/maryland-seasonal-home-services/challenges/" class="pillar-card">
+          <h3>Challenges & Solutions</h3>
+          <p>Common problems Maryland homeowners face and proven solutions</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="why-maryland">
+      <h2>Why Maryland Homes Need Special Attention</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>Four Distinct Seasons</h4>
+          <p>Maryland experiences hot humid summers, cold winters, and significant seasonal transitions that stress home systems.</p>
+        </div>
+        <div class="feature">
+          <h4>Coastal Influence</h4>
+          <p>Proximity to the Chesapeake Bay and Atlantic Ocean brings salt air, humidity, and storm exposure.</p>
+        </div>
+        <div class="feature">
+          <h4>Climate Variability</h4>
+          <p>From western mountain regions to eastern shore, Maryland's climate varies significantly across the state.</p>
+        </div>
+        <div class="feature">
+          <h4>Aging Housing Stock</h4>
+          <p>Many Maryland homes are decades old and require updates to meet modern weather-resilience standards.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .main-content {
+    padding: 3rem 20px;
+  }
+  .intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4a5568;
+  }
+  .pillar-grid h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2d3748;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .pillar-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e2e8f0;
+  }
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+  .pillar-card h3 {
+    color: #2c5282;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+  }
+  .pillar-card p {
+    color: #4a5568;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .why-maryland {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .why-maryland h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2d3748;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .feature h4 {
+    color: #2c5282;
+    margin-bottom: 0.5rem;
+  }
+  .feature p {
+    color: #4a5568;
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .why-maryland {
+      padding: 1.5rem;
+    }
+  }
+</style>

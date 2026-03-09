@@ -1,0 +1,89 @@
+---
+const currentYear = new Date().getFullYear();
+const domain = "livearico.org";
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Live AriCo</h3>
+        <p>Maryland Home Services for Seasonal Weather Challenges</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/maryland-seasonal-home-services/">Overview</a></li>
+          <li><a href="/maryland-seasonal-home-services/tools/">Tools</a></li>
+          <li><a href="/maryland-seasonal-home-services/challenges/">Challenges</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} {domain}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #2d3748;
+    color: #fff;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+  .footer-brand h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  .footer-brand p {
+    color: #a0aec0;
+  }
+  .footer-links h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+  .footer-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover {
+    color: #fff;
+  }
+  .footer-bottom {
+    border-top: 1px solid #4a5568;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #a0aec0;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

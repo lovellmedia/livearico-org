@@ -1,0 +1,374 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+
+const relatedTopics = [
+  { title: "Challenges", url: "/maryland-seasonal-home-services/challenges/" },
+  { title: "Technical Deep-Dive", url: "/maryland-seasonal-home-services/technical-deep-dive/" },
+  { title: "Trends", url: "/maryland-seasonal-home-services/trends/" },
+];
+
+const keyPoints = [
+  "Use our seasonal maintenance checklist generator for customized task lists",
+  "Calculate potential HVAC savings with our efficiency estimator",
+  "Find qualified contractors using our vetting checklist",
+  "Track Maryland weather alerts with recommended monitoring tools",
+];
+---
+
+<TopicLayout 
+  title="Tools & Resources - Maryland Home Services"
+  description="Interactive tools, calculators, checklists, and practical guides for Maryland homeowners dealing with seasonal weather challenges."
+  topic="Maryland Seasonal Home Services"
+  pillar="tools"
+  relatedTopics={relatedTopics}
+  keyPoints={keyPoints}
+>
+  <h1>Tools & Resources</h1>
+  
+  <ContentSection>
+    <p>Effective home maintenance in Maryland's variable climate requires planning, calculation, and informed decision-making. This collection of tools and resources helps homeowners tackle seasonal challenges, evaluate improvement options, and connect with qualified professionals. From maintenance checklists to savings calculators, these resources put practical information at your fingertips.</p>
+  </ContentSection>
+
+  <ContentSection title="Seasonal Maintenance Checklist Generator">
+    <p>Maryland's four distinct seasons each bring specific maintenance tasks. Our checklist generator creates customized task lists based on your home's characteristics and your location within the state.</p>
+    
+    <div class="tool-box">
+      <h3>Generate Your Custom Checklist</h3>
+      <form id="checklistForm" class="tool-form">
+        <div class="form-group">
+          <label for="homeType">Home Type:</label>
+          <select id="homeType">
+            <option value="single">Single Family</option>
+            <option value="townhouse">Townhouse/Rowhouse</option>
+            <option value="condo">Condominium</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="homeAge">Home Age:</label>
+          <select id="homeAge">
+            <option value="new">Built after 2000</option>
+            <option value="mid">Built 1970-2000</option>
+            <option value="old">Built before 1970</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <select id="location">
+            <option value="central">Central Maryland</option>
+            <option value="western">Western Maryland (Mountains)</option>
+            <option value="eastern">Eastern Shore/Coastal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="season">Season:</label>
+          <select id="season">
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+            <option value="winter">Winter</option>
+          </select>
+        </div>
+        <button type="button" onclick="generateChecklist()">Generate Checklist</button>
+      </form>
+      <div id="checklistOutput" class="tool-output"></div>
+    </div>
+  </ContentSection>
+
+  <ContentSection title="HVAC Efficiency Savings Estimator">
+    <p>Upgrading your HVAC system or improving your home's thermal envelope can yield significant energy savings. This calculator estimates potential savings based on your current system and proposed improvements.</p>
+    
+    <div class="tool-box">
+      <h3>Calculate Your Potential Savings</h3>
+      <form id="savingsForm" class="tool-form">
+        <div class="form-group">
+          <label for="currentAC">Current AC SEER Rating:</label>
+          <input type="number" id="currentAC" placeholder="e.g., 10" min="8" max="25">
+        </div>
+        <div class="form-group">
+          <label for="newAC">Proposed AC SEER Rating:</label>
+          <input type="number" id="newAC" placeholder="e.g., 16" min="14" max="25">
+        </div>
+        <div class="form-group">
+          <label for="sqft">Home Square Footage:</label>
+          <input type="number" id="sqft" placeholder="e.g., 2000" min="500" max="10000">
+        </div>
+        <div class="form-group">
+          <label for="bill">Average Monthly Electric Bill (summer):</label>
+          <input type="number" id="bill" placeholder="e.g., 200" min="50" max="1000">
+        </div>
+        <button type="button" onclick="calculateSavings()">Calculate Savings</button>
+      </form>
+      <div id="savingsOutput" class="tool-output"></div>
+    </div>
+  </ContentSection>
+
+  <ContentSection title="Contractor Vetting Checklist">
+    <p>Finding qualified contractors is essential for successful home improvement projects. This checklist helps you evaluate potential contractors and avoid common pitfalls.</p>
+    
+    <div class="resource-list">
+      <h3>Pre-Hire Verification</h3>
+      <ul>
+        <li><input type="checkbox"> Verify MHIC license at <a href="https://www.marylandattorneygeneral.gov/pages/mhic/">marylandattorneygeneral.gov</a></li>
+        <li><input type="checkbox"> Check for complaints with the Better Business Bureau</li>
+        <li><input type="checkbox"> Request proof of liability insurance and workers compensation</li>
+        <li><input type="checkbox"> Ask for local references from recent projects</li>
+        <li><input type="checkbox"> Verify any required specialty licenses (HVAC, electrical, plumbing)</li>
+      </ul>
+      
+      <h3>Proposal Evaluation</h3>
+      <ul>
+        <li><input type="checkbox"> Detailed scope of work with materials specified</li>
+        <li><input type="checkbox"> Clear timeline with start and completion dates</li>
+        <li><input type="checkbox"> Payment schedule with reasonable down payment (10-20%)</li>
+        <li><input type="checkbox"> Warranty terms for materials and labor</li>
+        <li><input type="checkbox"> Permit handling specified</li>
+      </ul>
+      
+      <h3>Red Flags to Avoid</h3>
+      <ul class="warning-list">
+        <li>Pressure to sign immediately or "today only" pricing</li>
+        <li>Requests for large upfront payments (over 33%)</li>
+        <li>No physical business address or local presence</li>
+        <li>Unwillingness to provide references or proof of insurance</li>
+        <li>Verbal-only agreements without written contracts</li>
+      </ul>
+    </div>
+  </ContentSection>
+
+  <ContentSection title="Weather Monitoring Resources">
+    <p>Staying informed about approaching weather helps Maryland homeowners prepare and protect their properties. These resources provide reliable forecasts and alerts specific to Maryland's climate.</p>
+    
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>National Weather Service</h4>
+        <p>Official forecasts, warnings, and advisories for Maryland</p>
+        <a href="https://www.weather.gov/lwx/">weather.gov/lwx</a>
+      </div>
+      <div class="resource-card">
+        <h4>Maryland Emergency Management</h4>
+        <p>State emergency alerts and preparedness guidance</p>
+        <a href="https://mema.maryland.gov/">mema.maryland.gov</a>
+      </div>
+      <div class="resource-card">
+        <h4>NOAA Climate Data</h4>
+        <p>Historical weather data and climate information</p>
+        <a href="https://www.climate.gov/">climate.gov</a>
+      </div>
+      <div class="resource-card">
+        <h4>Chesapeake Bay Forecast</h4>
+        <p>Marine conditions and coastal weather</p>
+        <a href="https://www.ndbc.noaa.gov/">ndbc.noaa.gov</a>
+      </div>
+    </div>
+  </ContentSection>
+
+  <ContentSection title="Financial Incentive Finder">
+    <p>Numerous federal, state, and utility programs offer financial incentives for energy efficiency improvements. These resources help you find applicable programs.</p>
+    
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>DSIRE Database</h4>
+        <p>Comprehensive database of energy incentives by state</p>
+        <a href="https://www.dsireusa.org/">dsireusa.org</a>
+      </div>
+      <div class="resource-card">
+        <h4>ENERGYSTAR Rebate Finder</h4>
+        <p>Find rebates for ENERGY STAR certified products</p>
+        <a href="https://www.energystar.gov/rebate-finder">energystar.gov</a>
+      </div>
+      <div class="resource-card">
+        <h4>Maryland Energy Administration</h4>
+        <p>State energy programs and incentives</p>
+        <a href="https://energy.maryland.gov/">energy.maryland.gov</a>
+      </div>
+      <div class="resource-card">
+        <h4>IRS Energy Credits</h4>
+        <p>Federal tax credits for efficiency improvements</p>
+        <a href="https://www.irs.gov/credits-deductions/energy-efficient-home-improvement-credit">irs.gov</a>
+      </div>
+    </div>
+  </ContentSection>
+</TopicLayout>
+
+<script is:inline>
+  function generateChecklist() {
+    const season = document.getElementById('season').value;
+    const location = document.getElementById('location').value;
+    const homeAge = document.getElementById('homeAge').value;
+    
+    const tasks = {
+      spring: [
+        'Inspect roof for winter damage',
+        'Clean gutters and downspouts',
+        'Service air conditioning system',
+        'Check exterior caulking and weatherstripping',
+        'Inspect foundation for cracks or settling',
+        'Test sump pump and check drainage',
+        'Clean or replace HVAC filters'
+      ],
+      summer: [
+        'Monitor humidity levels in basement',
+        'Clean outdoor AC condenser unit',
+        'Inspect attic ventilation',
+        'Check for signs of pest activity',
+        'Inspect caulking around windows and doors',
+        'Clean ceiling fans for optimal airflow',
+        'Monitor energy bills for sudden increases'
+      ],
+      fall: [
+        'Schedule heating system inspection',
+        'Clean gutters after leaf drop',
+        'Seal air leaks around windows and doors',
+        'Drain outdoor faucets and sprinkler systems',
+        'Inspect and clean chimney',
+        'Check insulation in attic and basement',
+        'Test smoke and carbon monoxide detectors'
+      ],
+      winter: [
+        'Monitor for ice dams on roof',
+        'Check pipes in unheated areas',
+        'Inspect basement for moisture',
+        'Change HVAC filters regularly',
+        'Clear snow from outdoor vents',
+        'Monitor indoor humidity levels',
+        'Check weatherstripping on exterior doors'
+      ]
+    };
+    
+    let output = '<h4>' + season.charAt(0).toUpperCase() + season.slice(1) + ' Maintenance Tasks</h4><ul>';
+    tasks[season].forEach(task => {
+      output += '<li><input type="checkbox"> ' + task + '</li>';
+    });
+    
+    if (location === 'western') {
+      output += '<li><input type="checkbox"> Check snow load on roof and deck</li>';
+      output += '<li><input type="checkbox"> Inspect ice dam prevention measures</li>';
+    }
+    if (location === 'eastern') {
+      output += '<li><input type="checkbox"> Inspect for salt air corrosion on exterior metal</li>';
+      output += '<li><input type="checkbox"> Check drainage after heavy rains</li>';
+    }
+    if (homeAge === 'old') {
+      output += '<li><input type="checkbox"> Inspect knob-and-tube wiring (if present)</li>';
+      output += '<li><input type="checkbox"> Check for lead paint hazards</li>';
+    }
+    
+    output += '</ul>';
+    document.getElementById('checklistOutput').innerHTML = output;
+  }
+  
+  function calculateSavings() {
+    const currentAC = parseFloat(document.getElementById('currentAC').value) || 10;
+    const newAC = parseFloat(document.getElementById('newAC').value) || 16;
+    const bill = parseFloat(document.getElementById('bill').value) || 200;
+    
+    const efficiencyImprovement = (currentAC - newAC) / currentAC;
+    const annualSavings = Math.round(bill * 4 * efficiencyImprovement * 100) / 100;
+    const tenYearSavings = Math.round(annualSavings * 10);
+    
+    let output = '<h4>Estimated Savings</h4>';
+    output += '<p><strong>Annual Cooling Savings:</strong> $' + annualSavings.toFixed(2) + '</p>';
+    output += '<p><strong>10-Year Savings:</strong> $' + tenYearSavings.toFixed(2) + '</p>';
+    output += '<p><em>Note: Actual savings vary based on usage patterns, electricity rates, and home characteristics.</em></p>';
+    
+    document.getElementById('savingsOutput').innerHTML = output;
+  }
+</script>
+
+<style>
+  .tool-box {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .tool-box h3 {
+    margin-top: 0;
+    color: #2d3748;
+  }
+  .tool-form {
+    margin-bottom: 1.5rem;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  button {
+    background: #2c5282;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  button:hover {
+    background: #1a365d;
+  }
+  .tool-output {
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+  }
+  .tool-output h4 {
+    margin-top: 0;
+    color: #2c5282;
+  }
+  .tool-output ul {
+    list-style: none;
+    padding: 0;
+  }
+  .tool-output li {
+    margin-bottom: 0.5rem;
+  }
+  .resource-list ul {
+    margin-bottom: 1.5rem;
+  }
+  .resource-list li {
+    margin-bottom: 0.5rem;
+  }
+  .warning-list {
+    color: #c53030;
+  }
+  .warning-list li::marker {
+    content: "⚠ ";
+  }
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .resource-card {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  .resource-card h4 {
+    margin-top: 0;
+    color: #2c5282;
+  }
+  .resource-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,134 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+
+const relatedTopics = [
+  { title: "Technical Deep-Dive", url: "/maryland-seasonal-home-services/technical-deep-dive/" },
+  { title: "Tools", url: "/maryland-seasonal-home-services/tools/" },
+  { title: "Challenges", url: "/maryland-seasonal-home-services/challenges/" },
+];
+
+const keyPoints = [
+  "Climate Zone 4 (mixed-humid) covers most of Maryland",
+  "U-factor measures heat transfer; lower values indicate better insulation",
+  "SEER ratings indicate air conditioner efficiency",
+  "HERS index scores measure home energy performance relative to code",
+];
+---
+
+<TopicLayout 
+  title="Ontology & Knowledge Base - Maryland Home Services"
+  description="Comprehensive glossary of weatherproofing terms, climate classifications, building codes, and technical specifications for Maryland homeowners."
+  topic="Maryland Seasonal Home Services"
+  pillar="ontology"
+  relatedTopics={relatedTopics}
+  keyPoints={keyPoints}
+>
+  <h1>Ontology & Knowledge Base</h1>
+  
+  <ContentSection>
+    <p>Understanding the terminology and classifications used in home weatherproofing and seasonal maintenance is essential for effective communication with contractors, accurate interpretation of building codes, and informed decision-making about home improvements. This comprehensive knowledge base provides definitions, explanations, and context for the key concepts relevant to Maryland homeowners.</p>
+  </ContentSection>
+
+  <ContentSection title="Climate Classifications">
+    <h3>Mixed-Humid Climate Zone</h3>
+    <p>Maryland falls primarily within the <a href="https://www.energycodes.gov/">DOE mixed-humid climate zone</a>, defined as regions receiving more than 20 inches of annual precipitation and experiencing approximately 5,400 heating degree days or fewer. This classification has significant implications for building design, vapor barrier placement, and HVAC system selection.</p>
+    
+    <h3>Climate Zone 4</h3>
+    <p>The majority of Maryland, including Baltimore and the surrounding metro area, falls within IECC Climate Zone 4. This zone experiences moderate winters and warm, humid summers, requiring building assemblies and mechanical systems capable of handling both heating and cooling loads with significant dehumidification requirements.</p>
+    
+    <h3>Climate Zone 5</h3>
+    <p>Western Maryland, particularly Garrett and Allegany counties, falls within Climate Zone 5 due to higher elevations and more severe winter conditions. Homes in this region require enhanced insulation levels and heating capacity compared to the rest of the state.</p>
+    
+    <h3>Heating Degree Days (HDD)</h3>
+    <p>A measure of heating demand calculated by comparing daily average temperatures to a base temperature (typically 65°F). Maryland's annual HDD ranges from approximately 3,000 in southern coastal areas to over 6,000 in western mountain regions.</p>
+    
+    <h3>Cooling Degree Days (CDD)</h3>
+    <p>Similar to HDD but measuring cooling demand when daily average temperatures exceed the base temperature. Maryland typically experiences 800-1,200 CDD annually, with higher values in urban areas due to heat island effects.</p>
+  </ContentSection>
+
+  <ContentSection title="Insulation Terminology">
+    <h3>R-Value</h3>
+    <p>The measure of thermal resistance, indicating how effectively a material resists heat flow. Higher R-values indicate better insulating properties. R-values are additive for materials in series (like insulation batts in a stud cavity), making them useful for calculating overall assembly performance.</p>
+    
+    <h3>U-Factor (U-Value)</h3>
+    <p>The inverse of R-value, measuring the rate of heat transfer through a material or assembly. U-factors are used for windows, doors, and complete wall/roof assemblies. Lower U-factors indicate better performance. Unlike R-values, U-factors are not additive.</p>
+    
+    <h3>Continuous Insulation (ci)</h3>
+    <p>Insulation that runs continuously over structural members without thermal bridges, typically installed as rigid foam boards on the exterior of framing. Continuous insulation is increasingly required by code and significantly improves assembly performance compared to cavity insulation alone.</p>
+    
+    <h3>Thermal Bridging</h3>
+    <p>Localized paths of high heat flow that bypass insulation, such as studs, joists, or other framing members. Thermal bridges reduce the effective R-value of assemblies and can cause cold spots that lead to condensation.</p>
+    
+    <h3>Vapor Retarder</h3>
+    <p>A material that limits the passage of water vapor. Class I vapor retarders (0.1 perm or less) include polyethylene sheeting and aluminum foil. Class II (0.1-1.0 perm) includes kraft-faced fiberglass batts. Class III (1.0-10 perm) includes latex paint.</p>
+  </ContentSection>
+
+  <ContentSection title="HVAC Terminology">
+    <h3>SEER (Seasonal Energy Efficiency Ratio)</h3>
+    <p>A measure of air conditioner or heat pump cooling efficiency, calculated by dividing cooling output by energy input over a typical cooling season. Higher SEER ratings indicate greater efficiency. Current federal minimum is 14 SEER in Maryland.</p>
+    
+    <h3>HSPF (Heating Seasonal Performance Factor)</h3>
+    <p>Similar to SEER but measuring heat pump heating efficiency. HSPF ratings of 8.0 or higher indicate high-efficiency equipment.</p>
+    
+    <h3>AFUE (Annual Fuel Utilization Efficiency)</h3>
+    <p>A measure of furnace or boiler efficiency, expressed as a percentage of fuel converted to heat. Standard furnaces are 80% AFUE; high-efficiency condensing furnaces achieve 90-98% AFUE.</p>
+    
+    <h3>Manual J</h3>
+    <p>The ACCA (Air Conditioning Contractors of America) standard method for calculating residential heating and cooling loads. <a href="/maryland-seasonal-home-services/technical-deep-dive/">Proper Manual J calculations</a> are essential for correct HVAC sizing.</p>
+    
+    <h3>Manual D</h3>
+    <p>The ACCA standard for residential duct design, ensuring proper airflow to all rooms for comfort and efficiency.</p>
+    
+    <h3>Heat Pump</h3>
+    <p>A reversible refrigeration system that can provide both heating and cooling. In heating mode, heat pumps extract heat from outdoor air (air-source) or the ground (ground-source/geothermal) and move it indoors. Modern cold-climate heat pumps can operate efficiently at temperatures well below freezing.</p>
+  </ContentSection>
+
+  <ContentSection title="Moisture Management Terms">
+    <h3>Dew Point</h3>
+    <p>The temperature at which air becomes saturated with moisture and condensation begins. In Maryland's humid climate, surface temperatures below the dew point of interior air will accumulate condensation, leading to moisture problems.</p>
+    
+    <h3>Perm Rating</h3>
+    <p>A measure of water vapor permeability, expressed in perms (grains of water per square foot per hour per inch of mercury pressure difference). Materials rated 1 perm or less are considered vapor barriers.</p>
+    
+    <h3>Drainage Plane</h3>
+    <p>A water-resistant layer behind exterior cladding that allows water to drain down and away from the structure. House wrap, building paper, or rigid insulation can serve as drainage planes when properly detailed.</p>
+    
+    <h3>Capillary Break</h3>
+    <p>A gap or non-porous material that interrupts capillary action, preventing water from wicking through materials. Capillary breaks are essential at foundation footings and between masonry and wood framing.</p>
+    
+    <h3>Ice Dam</h3>
+    <p>A ridge of ice that forms at the edge of a roof, preventing melting snow from draining. Water backs up behind the dam, potentially leaking into the home. Ice dams are caused by heat loss through the roof combined with snow cover.</p>
+  </ContentSection>
+
+  <ContentSection title="Building Code Terms">
+    <h3>IECC (International Energy Conservation Code)</h3>
+    <p>The model energy code adopted by most states, including Maryland, establishing minimum requirements for building energy efficiency. Maryland adopts the IECC with state-specific amendments.</p>
+    
+    <h3>HERS Index (Home Energy Rating System)</h3>
+    <p>A scoring system for measuring home energy performance relative to a reference home meeting current code. A HERS score of 100 represents code-minimum, while lower scores indicate better performance (0 = net-zero energy).</p>
+    
+    <h3>Energy Star Certified Homes</h3>
+    <p>Homes meeting EPA criteria for energy efficiency, typically achieving HERS scores of 70 or lower (30% more efficient than code). The <a href="https://www.energystar.gov/">ENERGY STAR program</a> provides certification for both new and existing homes.</p>
+    
+    <h3>Blower Door Test</h3>
+    <p>A diagnostic test using a powerful fan to depressurize a home, measuring air leakage rate in ACH50 (air changes per hour at 50 Pascals pressure). Required by many building codes and energy programs to verify air sealing quality.</p>
+    
+    <h3>Duct Blaster Test</h3>
+    <p>Similar to a blower door test but applied specifically to ductwork, measuring duct leakage to outside the conditioned space. Required by many codes for new duct installations.</p>
+  </ContentSection>
+
+  <ContentSection title="Contractor and Professional Terms">
+    <h3>MHIC (Maryland Home Improvement Commission)</h3>
+    <p>The state agency that licenses and regulates home improvement contractors in Maryland. <a href="/maryland-seasonal-home-services/challenges/">MHIC licensing</a> is required for most home improvement work over $500.</p>
+    
+    <h3>BPI Certification (Building Performance Institute)</h3>
+    <p>A professional certification for contractors specializing in home performance and energy efficiency. BPI-certified professionals are trained in building science, diagnostic testing, and comprehensive home assessments.</p>
+    
+    <h3>HERS Rater</h3>
+    <p>A certified professional authorized to conduct Home Energy Rating System assessments. HERS raters perform energy modeling, conduct diagnostic tests, and issue official HERS scores.</p>
+    
+    <h3>Scope of Work</h3>
+    <p>A detailed document describing exactly what work will be performed, including materials, specifications, and completion criteria. A comprehensive scope of work is essential for contractor agreements and project success.</p>
+  </ContentSection>
+</TopicLayout>

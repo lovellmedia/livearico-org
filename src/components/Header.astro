@@ -1,0 +1,126 @@
+---
+export interface Props {
+  title?: string;
+}
+const { title = "Live AriCo" } = Astro.props;
+const siteTitle = "Live AriCo";
+---
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <a href="/" class="logo">{siteTitle}</a>
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/maryland-seasonal-home-services/">Overview</a></li>
+          <li><a href="/maryland-seasonal-home-services/history/">History</a></li>
+          <li><a href="/maryland-seasonal-home-services/technical-deep-dive/">Technical</a></li>
+          <li><a href="/maryland-seasonal-home-services/ontology/">Ontology</a></li>
+          <li><a href="/maryland-seasonal-home-services/trends/">Trends</a></li>
+          <li><a href="/maryland-seasonal-home-services/tools/">Tools</a></li>
+          <li><a href="/maryland-seasonal-home-services/challenges/">Challenges</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('mobileMenuToggle');
+    const nav = document.getElementById('mainNav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        toggle.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c5282;
+    text-decoration: none;
+  }
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+  }
+  .nav-list a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .nav-list a:hover {
+    color: #2c5282;
+  }
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 20px;
+    }
+    .main-nav.active {
+      display: block;
+    }
+    .nav-list {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .mobile-menu-toggle {
+      display: flex;
+    }
+  }
+</style>

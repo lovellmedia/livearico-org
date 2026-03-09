@@ -1,0 +1,113 @@
+---
+export interface Props {
+  currentTopic?: string;
+  currentPillar?: string;
+}
+const { currentTopic = "", currentPillar = "" } = Astro.props;
+
+const pillars = [
+  { slug: "", label: "Overview" },
+  { slug: "history", label: "History & Evolution" },
+  { slug: "technical-deep-dive", label: "Technical Deep-Dive" },
+  { slug: "ontology", label: "Ontology" },
+  { slug: "trends", label: "Trends" },
+  { slug: "tools", label: "Tools" },
+  { slug: "challenges", label: "Challenges" },
+];
+---
+
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    {currentTopic && (
+      <>
+        <span class="separator">/</span>
+        <span class="current">{currentTopic}</span>
+      </>
+    )}
+  </div>
+</nav>
+
+{currentTopic && (
+  <nav class="pillar-nav" aria-label="Pillar pages">
+    <h3>In This Section</h3>
+    <ul>
+      {pillars.map(pillar => {
+        const href = pillar.slug 
+          ? `/maryland-seasonal-home-services/${pillar.slug}/`
+          : `/maryland-seasonal-home-services/`;
+        const isActive = currentPillar === pillar.slug;
+        return (
+          <li class={isActive ? 'active' : ''}>
+            <a href={href}>{pillar.label}</a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .breadcrumb-nav {
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  .breadcrumb a {
+    color: #2c5282;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .separator {
+    margin: 0 0.5rem;
+    color: #999;
+  }
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+  .pillar-nav {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .pillar-nav h3 {
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+    color: #2d3748;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .pillar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pillar-nav li {
+    margin-bottom: 0.5rem;
+  }
+  .pillar-nav li.active a {
+    color: #2c5282;
+    font-weight: 600;
+    background: #ebf8ff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-left: -0.5rem;
+  }
+  .pillar-nav a {
+    color: #4a5568;
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+  }
+  .pillar-nav a:hover {
+    color: #2c5282;
+  }
+</style>

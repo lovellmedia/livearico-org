@@ -1,0 +1,98 @@
+---
+import TopicLayout from '../../layouts/TopicLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+
+const relatedTopics = [
+  { title: "Overview", url: "/maryland-seasonal-home-services/" },
+  { title: "History", url: "/maryland-seasonal-home-services/history/" },
+  { title: "Challenges", url: "/maryland-seasonal-home-services/challenges/" },
+];
+
+const keyPoints = [
+  "Maryland requires HVAC systems sized for both humid summers and cold winters",
+  "Recommended insulation levels: R-49 to R-60 for attics, R-13 to R-21 for walls",
+  "Vapor barriers are essential on the warm side of insulation in Maryland's climate",
+  "Proper drainage requires 6-inch drop per 10 feet away from foundation",
+];
+---
+
+<TopicLayout 
+  title="Technical Deep-Dive - Maryland Home Systems"
+  description="Technical specifications for HVAC systems, insulation, moisture barriers, and structural considerations for Maryland's climate."
+  topic="Maryland Seasonal Home Services"
+  pillar="technical-deep-dive"
+  relatedTopics={relatedTopics}
+  keyPoints={keyPoints}
+>
+  <h1>Technical Deep-Dive: Maryland Home Systems</h1>
+  
+  <ContentSection>
+    <p>Successfully maintaining a home in Maryland's variable climate requires understanding the technical specifications and engineering principles that govern building performance. This deep-dive explores the critical systems and components that protect Maryland homes from seasonal weather challenges, providing homeowners with the technical knowledge needed to make informed decisions about upgrades, repairs, and maintenance.</p>
+    
+    <p>From HVAC sizing calculations to moisture barrier placement, the technical details matter. Properly specified and installed systems not only improve comfort but also reduce energy costs and extend the lifespan of building components. This guide covers the essential technical considerations for Maryland's humid subtropical climate.</p>
+  </ContentSection>
+
+  <ContentSection title="HVAC System Design for Maryland">
+    <p>Heating, ventilation, and air conditioning systems in Maryland must handle both summer dehumidification and winter heating, making proper sizing and specification critical. Undersized systems cannot maintain comfort during extreme weather, while oversized systems cycle inefficiently and fail to adequately dehumidify.</p>
+    
+    <h3>Load Calculation Fundamentals</h3>
+    <p>Proper HVAC sizing begins with a Manual J load calculation, which accounts for local climate data, building envelope characteristics, internal heat gains, and ventilation requirements. For Maryland locations, design temperatures typically range from 10°F to 95°F, though western Maryland requires colder design temperatures.</p>
+    
+    <p>The <a href="https://www.acca.org/">Air Conditioning Contractors of America (ACCA)</a> provides standards for these calculations. Key factors specific to Maryland include high summer humidity (design grains of moisture: 120-130), significant solar gains on east and west exposures, and the thermal mass characteristics common in Maryland's masonry construction.</p>
+    
+    <h3>Sizing Considerations</h3>
+    <p>Maryland homes typically require 20-30 BTU per square foot of cooling capacity, with higher densities for poorly insulated homes or those with significant west-facing glass. Heating requirements range from 25-40 BTU per square foot, depending on insulation levels and location within the state. These figures represent general guidelines—<a href="/maryland-seasonal-home-services/tools/">professional load calculations</a> are essential for proper sizing.</p>
+    
+    <h3>Humidity Control</h3>
+    <p>Maryland's summer humidity presents particular challenges. Air conditioning systems must be sized correctly to achieve adequate runtime for dehumidification. Oversized systems cool the air too quickly, failing to remove sufficient moisture and leaving homes feeling clammy even at comfortable temperatures. Supplemental dehumidification may be necessary in basements and during shoulder seasons when cooling loads are minimal but humidity remains high.</p>
+  </ContentSection>
+
+  <ContentSection title="Insulation Specifications">
+    <p>Proper insulation is fundamental to energy efficiency and comfort in Maryland homes. The state falls within climate zones 4 and 5 according to the <a href="https://www.energycodes.gov/">International Energy Conservation Code</a>, with specific R-value requirements based on location and building component.</p>
+    
+    <h3>Attic Insulation</h3>
+    <p>Attic insulation provides the highest return on investment for most Maryland homes. Current recommendations call for R-49 to R-60 in attics, which typically requires 16-20 inches of fiberglass batts or blown-in cellulose. Attic insulation should extend to the exterior walls without gaps, and proper air sealing at the attic floor is essential before adding insulation.</p>
+    
+    <h3>Wall Insulation</h3>
+    <p>For new construction, R-13 to R-21 is recommended for framed walls, depending on framing type and cavity depth. Existing homes with uninsulated walls present particular challenges. Injection foam or dense-pack cellulose can be installed through exterior holes, though the process requires specialized equipment and expertise.</p>
+    
+    <p>Maryland's many brick and masonry homes require different approaches. Solid masonry walls cannot accommodate cavity insulation, but interior insulation systems using rigid foam or furring strips can improve performance. However, these systems must be designed carefully to avoid moisture problems—<a href="/maryland-seasonal-home-services/challenges/">a common issue in older Maryland homes</a>.</p>
+    
+    <h3>Foundation and Basement Insulation</h3>
+    <p>Basement insulation is particularly important in Maryland, where high water tables and humid summers create moisture challenges. For conditioned basements, R-10 to R-15 continuous insulation on interior or exterior basement walls is recommended. Rigid foam boards, properly sealed at seams and edges, provide both insulation and a vapor barrier.</p>
+  </ContentSection>
+
+  <ContentSection title="Moisture Management">
+    <p>Maryland's humid climate makes moisture management a critical concern. Proper moisture control involves managing both bulk water (rain, groundwater) and water vapor (humidity).</p>
+    
+    <h3>Vapor Barriers and Retarders</h3>
+    <p>In Maryland's mixed-humid climate, vapor retarders should be installed on the warm side of the insulation. This typically means polyethylene sheeting on the interior side of exterior walls in winter, though the specifics depend on wall assembly and HVAC operation. The goal is to prevent warm, moist interior air from reaching cold surfaces where it can condense.</p>
+    
+    <h3>Drainage Plane Systems</h3>
+    <p>Exterior moisture management begins with a proper drainage plane behind siding or exterior finishes. House wrap, building paper, or rigid foam with taped seams should direct any water that penetrates the exterior cladding down and away from the structure. Critical details include proper flashing at windows, doors, and penetrations.</p>
+    
+    <h3>Foundation Drainage</h3>
+    <p>Proper foundation drainage is essential in Maryland's clay soils and high water table conditions. A perimeter drain system (French drain) should be installed at the footing level, discharging to daylight or a sump pump. The ground around the foundation should slope away at a minimum of 6 inches per 10 feet for at least 10 feet from the foundation.</p>
+  </ContentSection>
+
+  <ContentSection title="Roofing and Exterior Systems">
+    <p>Maryland's weather patterns place significant demands on roofing and exterior systems. From summer UV exposure to winter freeze-thaw cycles, these components must be properly specified and maintained.</p>
+    
+    <h3>Roofing Material Selection</h3>
+    <p>Asphalt shingles remain the most common roofing material in Maryland, with architectural shingles (30+ year rated) representing a good balance of cost and durability. Metal roofing, while more expensive initially, offers superior longevity and reflects solar heat, reducing cooling loads. In coastal areas, impact-resistant shingles or metal roofing may be required by insurance providers.</p>
+    
+    <h3>Attic Ventilation</h3>
+    <p>Proper attic ventilation works with insulation to manage temperature and moisture. Maryland homes should have a balanced ventilation system providing 1 square foot of net free vent area per 150 square feet of attic floor area (1:150 ratio), or 1:300 with a vapor barrier. Ridge vents combined with soffit vents provide effective passive ventilation.</p>
+    
+    <h3>Siding and Exterior Cladding</h3>
+    <p>Vinyl siding dominates new construction in Maryland due to its low cost and minimal maintenance requirements. However, fiber cement siding offers superior durability and fire resistance, particularly important in wildland-urban interface areas. Wood siding, while beautiful, requires significant maintenance in Maryland's humid climate and is increasingly rare on new construction.</p>
+  </ContentSection>
+
+  <ContentSection title="Windows and Doors">
+    <p>Windows and doors represent critical thermal boundaries in any home. In Maryland's climate, proper specification can significantly impact both comfort and energy costs.</p>
+    
+    <p>Modern replacement windows should meet ENERGY STAR requirements for the South-Central climate zone, which includes most of Maryland. This means U-factors of 0.30 or lower and Solar Heat Gain Coefficients (SHGC) appropriate for the orientation—lower SHGC for west-facing windows to reduce summer heat gain, potentially higher SHGC for south-facing windows to capture winter solar heat.</p>
+    
+    <p>Air sealing around windows and doors is as important as the units themselves. Proper flashing integration with the drainage plane, backer rod and sealant at the interior, and expandable foam at the rough opening perimeter all contribute to a weather-tight installation.</p>
+  </ContentSection>
+</TopicLayout>
